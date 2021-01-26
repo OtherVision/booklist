@@ -6,7 +6,7 @@ function cadastraApartamento(e) {
     var time = new Date();
 
     if (    !numeroApartamento && !nomeHospede) {
-        alert("Por favor, preencha todos os campos");
+        alert("Por favor, preencha todas as informações  ");
         return false;
     }
 
@@ -34,7 +34,7 @@ function cadastraApartamento(e) {
     
     document.getElementById('formulario').reset();
 
-    mostraPatio();
+    addLivro();
 
     e.preventDefault();
 }
@@ -54,7 +54,7 @@ function apagarVeiculo(nome) {
     mostraPatio();
 }
 
-function mostraPatio() {
+function addLivro() {
     var unidades = JSON.parse(localStorage.getItem('edicifio'));
     var unidadesResultado = document.getElementById('resultados')
     
@@ -76,6 +76,7 @@ function mostraPatio() {
                                 '</tr>';
     }
 
-    unidadesResultado.style.background = "rgba(15, 75, 128, .5)";
+     unidadesResultado.style.background = "rgba(0, 0, 0, 0.1)";
+    
 }
 
