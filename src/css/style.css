@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap');
 
-body {position: relative; animation: body 5s backwards; background-color: rgb(0, 0, 0);}
+body { height: 100vh; position: relative; animation: body 5s backwards; background-color: rgb(0, 0, 0);}
 
 body::after {
     content: ""; 
@@ -47,7 +47,7 @@ body::after {
 .form-group input:focus {background: rgb(172, 207, 238);}
 .form-group label {display: block; font-weight: 700; font-size: 1rem; text-align: center;}
 
-#nomeHospede {width: 100%;}
+#author {width: 100%;}
 
 
 .btn-box {width: 100%; display: flex; justify-content: center;}

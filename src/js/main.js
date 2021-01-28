@@ -1,18 +1,18 @@
-document.getElementById('formulario').addEventListener('submit', cadastraApartamento);
+document.getElementById('formulario').addEventListener('submit', cadastraLivro);
 
-function cadastraApartamento(e) {
-    var numeroApartamento = document.getElementById('numeroApartamento').value;
-    var nomeHospede = document.getElementById('nomeHospede').value;
+function cadastraLivro(e) {
+    var title = document.getElementById('title').value;
+    var author = document.getElementById('author').value;
     var time = new Date();
 
-    if (    !numeroApartamento && !nomeHospede) {
+    if (    !title && !author) {
         alert("Por favor, preencha todas as informações  ");
         return false;
     }
 
-    unidade = {
-        apartamento: numeroApartamento,
-        nome: nomeHospede,
+    book = {
+        titulo: title,
+        nome: author,
         hora: time.getHours(),
         minutos: time.getMinutes(),
         dia: time.getDate(),
@@ -21,15 +21,15 @@ function cadastraApartamento(e) {
     }
 
 
-    if (localStorage.getItem('edicifio') === null ) {
-        var unidades = [];
-        unidades.push(unidade);
-        localStorage.setItem('edicifio', JSON.stringify(unidades));
+    if (localStorage.getItem('library') === null ) {
+        var myBooks = [];
+        myBooks.push(book);
+        localStorage.setItem('library', JSON.stringify(myBooks));
 
     } else {
-        var unidades = JSON.parse(localStorage.getItem('edicifio'));
-        unidades.push(unidade);
-        localStorage.setItem('edicifio', JSON.stringify(unidades));
+        var myBooks = JSON.parse(localStorage.getItem('library'));
+        myBooks.push(book);
+        localStorage.setItem('library', JSON.stringify(myBooks));
     }
     
     document.getElementById('formulario').reset();
@@ -39,44 +39,44 @@ function cadastraApartamento(e) {
     e.preventDefault();
 }
 
-function apagarVeiculo(nome) {
+function deleteBook(nome) {
     
-    var unidades = JSON.parse(localStorage.getItem('edicifio'));
+    var myBooks = JSON.parse(localStorage.getItem('library'));
 
-    for (var i = 0; i < unidades.length; i++) {
-        if (unidades[i].nome == nome ) {
-            unidades.splice(i, 1);
+    for (var i = 0; i < myBooks.length; i++) {
+        if (myBooks[i].nome == nome ) {
+            myBooks.splice(i, 1);
         }
 
-        localStorage.setItem('edicifio', JSON.stringify(unidades));
+        localStorage.setItem('library', JSON.stringify(myBooks));
     }
 
-    mostraPatio();
+    addLivro();
 }
 
 function addLivro() {
-    var unidades = JSON.parse(localStorage.getItem('edicifio'));
-    var unidadesResultado = document.getElementById('resultados')
+    var myBooks = JSON.parse(localStorage.getItem('library'));
+    var myLibrary = document.getElementById('resultados')
     
-    unidadesResultado.innerHTML = '';
+    myLibrary.innerHTML = '';
 
-    for (var i = 0; i < unidades.length; i++ ) {
-        var apartamento = unidades[i].apartamento;
-        var nome = unidades[i].nome;
-        var hora = unidades[i].hora;
-        var minutos = unidades[i].minutos;
-        var dia = unidades[i].dia;
-        var mes = unidades[i].mes;
-        var ano = unidades[i].ano;
+    for (var i = 0; i < myBooks.length; i++ ) {
+        var titulo = myBooks[i].titulo;
+        var nome = myBooks[i].nome;
+        var hora = myBooks[i].hora;
+        var minutos = myBooks[i].minutos;
+        var dia = myBooks[i].dia;
+        var mes = myBooks[i].mes;
+        var ano = myBooks[i].ano;
 
-        unidadesResultado.innerHTML += '<tr class="table-Js"><td>' + apartamento +
+        myLibrary.innerHTML += '<tr class="table-Js"><td>' + titulo +
                                 '</td><td>' + nome +
                                 '</td><td>' + hora + ':' + minutos + '   -   ' + dia + '/' + mes + '/' + ano +
-                                '</td><td><button class="btn" onclick="apagarVeiculo(\'' + nome +'\')"> Excluir</button></td>' +
+                                '</td><td><button class="btn" onclick="deleteBook(\'' + nome +'\')"> Excluir</button></td>' +
                                 '</tr>';
     }
 
-     unidadesResultado.style.background = "rgba(0, 0, 0, 0.1)";
+     myLibrary.style.background = "rgba(0, 0, 0, 0.1)";
     
 }
 
