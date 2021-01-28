@@ -9,7 +9,6 @@ function cadastraLivro(e) {
         alert("Por favor, preencha todas as informações  ");
         return false;
     }
-
     book = {
         titulo: title,
         nome: author,
@@ -19,8 +18,6 @@ function cadastraLivro(e) {
         mes: time.getMonth()+1,
         ano: time.getFullYear()
     }
-
-
     if (localStorage.getItem('library') === null ) {
         var myBooks = [];
         myBooks.push(book);
@@ -31,29 +28,23 @@ function cadastraLivro(e) {
         myBooks.push(book);
         localStorage.setItem('library', JSON.stringify(myBooks));
     }
-    
     document.getElementById('formulario').reset();
-
     addLivro();
-
     e.preventDefault();
 }
 
 function deleteBook(nome) {
     
     var myBooks = JSON.parse(localStorage.getItem('library'));
-
     for (var i = 0; i < myBooks.length; i++) {
         if (myBooks[i].nome == nome ) {
             myBooks.splice(i, 1);
         }
-
         localStorage.setItem('library', JSON.stringify(myBooks));
     }
 
     addLivro();
 }
-
 function addLivro() {
     var myBooks = JSON.parse(localStorage.getItem('library'));
     var myLibrary = document.getElementById('resultados')
