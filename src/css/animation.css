@@ -25,3 +25,10 @@
       transform: translate(0%);
     }
   }
+
+  @keyframes inputMove {
+      from {
+        transform: translateY(-55%);
+        opacity: 0;
+      } 
+  }

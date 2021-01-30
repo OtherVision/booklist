@@ -1,9 +1,9 @@
-document.getElementById('formulario').addEventListener('submit', cadastraLivro);
+document.getElementById("formulario").addEventListener('submit', cadastraLivro);
 
 function cadastraLivro(e) {
-    var title = document.getElementById('title').value;
-    var author = document.getElementById('author').value;
-    var time = new Date();
+    let title = document.getElementById('title').value;
+    let author = document.getElementById('author').value;
+    let time = new Date();
 
     if (    !title && !author) {
         alert("Por favor, preencha todas as informações  ");
@@ -19,12 +19,12 @@ function cadastraLivro(e) {
         ano: time.getFullYear()
     }
     if (localStorage.getItem('library') === null ) {
-        var myBooks = [];
+        let myBooks = [];
         myBooks.push(book);
         localStorage.setItem('library', JSON.stringify(myBooks));
 
     } else {
-        var myBooks = JSON.parse(localStorage.getItem('library'));
+        let myBooks = JSON.parse(localStorage.getItem('library'));
         myBooks.push(book);
         localStorage.setItem('library', JSON.stringify(myBooks));
     }
@@ -35,8 +35,8 @@ function cadastraLivro(e) {
 
 function deleteBook(nome) {
     
-    var myBooks = JSON.parse(localStorage.getItem('library'));
-    for (var i = 0; i < myBooks.length; i++) {
+    let myBooks = JSON.parse(localStorage.getItem('library'));
+    for (let i = 0; i < myBooks.length; i++) {
         if (myBooks[i].nome == nome ) {
             myBooks.splice(i, 1);
         }
@@ -46,19 +46,19 @@ function deleteBook(nome) {
     addLivro();
 }
 function addLivro() {
-    var myBooks = JSON.parse(localStorage.getItem('library'));
-    var myLibrary = document.getElementById('resultados')
+    let myBooks = JSON.parse(localStorage.getItem('library'));
+    let myLibrary = document.getElementById('resultados')
     
     myLibrary.innerHTML = '';
 
-    for (var i = 0; i < myBooks.length; i++ ) {
-        var titulo = myBooks[i].titulo;
-        var nome = myBooks[i].nome;
-        var hora = myBooks[i].hora;
-        var minutos = myBooks[i].minutos;
-        var dia = myBooks[i].dia;
-        var mes = myBooks[i].mes;
-        var ano = myBooks[i].ano;
+    for (let i = 0; i < myBooks.length; i++ ) {
+        let titulo = myBooks[i].titulo;
+        let nome = myBooks[i].nome;
+        let hora = myBooks[i].hora;
+        let minutos = myBooks[i].minutos;
+        let dia = myBooks[i].dia;
+        let mes = myBooks[i].mes;
+        let ano = myBooks[i].ano;
 
         myLibrary.innerHTML += '<tr class="table-Js"><td>' + titulo +
                                 '</td><td>' + nome +
@@ -70,6 +70,22 @@ function addLivro() {
      myLibrary.style.background = "rgba(0, 0, 0, 0.1)";
     
 }
+
+document.getElementById("btn__color").addEventListener('click', changeColor);
+function changeColor() {
+    let body = document.getElementsByTagName("body")[0];
+    body.style.backgroundImage = "none";
+}
+
+document.getElementsById("btn__color2").addEventListener('click', returnColor);
+function returnColor() {
+    let body = getElementsByTagName("body")[0];
+    body.style.backgroundImage = "url('/src/img/cameron-cress-8-pZr_MFfw8-unsplash.jpg')";
+}
+
+
+
+
 
 
 
