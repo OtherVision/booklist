@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap");
+@import url("./animation.css");
+
 * {
   padding: 0;
   margin: 0;
@@ -6,8 +10,6 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
-@import url("https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap");
 
 body {
   height: 100vh;
@@ -29,15 +31,11 @@ body::after {
   background-position: top center;
   object-fit: cover;
 }
-@keyframes body {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+
 /*   header da página       */
+
+
+
 .header {
   width: 100%;
   text-align: center;
@@ -47,18 +45,7 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: moveTitle 3s backwards;
-}
-
-@keyframes moveTitle {
-  from {
-    transform: translateY(-5rem);
-    opacity: 0;
-  }
-  to {
-    transform: translate(0%);
-    opacity: 1;
-  }
+  animation: moveTitle 2s backwards;
 }
 
 .header h1 {
@@ -76,6 +63,11 @@ body::after {
   text-shadow: 1px 1px 1px #fff;
   font-size: 2.5rem;
 }
+
+.header h1 i {
+  animation: moveRight 2s backwards;
+}
+
 
 /*  conteudo principal da página        */
 .container {

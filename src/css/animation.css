@@ -1,0 +1,27 @@
+@keyframes body {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes moveTitle {
+    from {
+      transform: translateY(-30%);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0%);
+      opacity: 1;
+    }
+  }
+
+  @keyframes moveRight {
+    from {
+      transform: translate(5rem);
+    } to {
+      transform: translate(0%);
+    }
+  }
