@@ -77,15 +77,9 @@ function changeColor() {
     body.style.backgroundImage = "none";
 }
 
-document.getElementsById("btn__color2").addEventListener('click', returnColor);
+document.getElementById("btn__color2").addEventListener('click', returnColor);
+
 function returnColor() {
-    let body = getElementsByTagName("body")[0];
-    body.style.backgroundImage = "url('/src/img/cameron-cress-8-pZr_MFfw8-unsplash.jpg')";
+    let twoBody = document.getElementsByTagName("body")[0];
+    twoBody.style.backgroundImage = "url('./img/cameron-cress-8-pZr_MFfw8-unsplash.jpg')";
 }
-
-
-
-
-
-
-
