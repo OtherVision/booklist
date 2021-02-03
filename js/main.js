@@ -81,5 +81,5 @@ document.getElementById("btn__color2").addEventListener('click', returnColor);
 
 function returnColor() {
     let twoBody = document.getElementsByTagName("body")[0];
-    twoBody.style.backgroundImage = "url('./img/cameron-cress-8-pZr_MFfw8-unsplash.jpg')";
+    twoBody.style.backgroundImage = "url('../img/cameron-cress-8-pZr_MFfw8-unsplash.jpg')";
 }
