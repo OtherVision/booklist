@@ -32,3 +32,13 @@
         opacity: 0;
       } 
   }
+
+  @keyframes moveTable {
+    from {
+      transform: translate(-55%);
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

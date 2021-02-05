@@ -108,22 +108,13 @@ body::after {
 
 /*  tabela        */
 .table {
-  width: 100%;
+  width: 50%;
+  margin: 0 auto;
   background: rgb(255, 255, 255);
   border: 1px solid rgb(255, 255, 255);
   border-radius: 0.5rem;
   padding: 1rem;
   animation: moveTable 2s backwards;
-}
-
-@keyframes moveTable {
-  from {
-    transform: translate(-55%);
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 .table thead tr th {
