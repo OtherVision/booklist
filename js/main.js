@@ -8,6 +8,7 @@ function cadastraLivro(e) {
     if (    !title && !author) {
         alert("Por favor, preencha todas as informações  ");
         return false;
+
     }
     book = {
         titulo: title,
@@ -72,14 +73,22 @@ function addLivro() {
 }
 
 document.getElementById("btn__color").addEventListener('click', changeColor);
-function changeColor() {
-    let body = document.getElementsByTagName("body")[0];
+
+body = document.getElementsByTagName("body")[0];
+button = document.getElementById("btn__color");
+button2 = document.getElementById("btn__color2");
+
+function changeColor() {    
     body.style.backgroundImage = "none";
+    button.style.display = "none";
+    button2.style.display = "inline-block";
 }
 
 document.getElementById("btn__color2").addEventListener('click', returnColor);
 
 function returnColor() {
-    let twoBody = document.getElementsByTagName("body")[0];
-    twoBody.style.backgroundImage = "url('../img/cameron-cress-8-pZr_MFfw8-unsplash.jpg')";
+    body.style.backgroundImage = "url('../img/cameron-cress-8-pZr_MFfw8-unsplash.jpg')";
+    button.style.display = "inherit";
+    button2.style.display = "none";
+
 }
