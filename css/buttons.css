@@ -10,6 +10,16 @@
   cursor: pointer;
 }
 
+#btn__color i {
+  padding: 27%;
+  color: rgb(15, 75, 128);
+}
+
+#btn__color2 i {
+  color: rgb(15, 75, 128);
+}
+
+
 #btn__color2 {
   display: none;
   border-radius: 10rem;
