@@ -68,7 +68,9 @@ function addLivro() {
                                 '</tr>';
     }
 
-     myLibrary.style.background = "rgba(0, 0, 0, 0.1)";
+     myLibrary.style.background = "rgb(172, 207, 238)";
+     myLibrary.style.padding = "10rem";
+
     
 }
 

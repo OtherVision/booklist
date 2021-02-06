@@ -113,12 +113,11 @@ body::after {
   background: rgb(255, 255, 255);
   border: 1px solid rgb(255, 255, 255);
   border-radius: 0.5rem;
-  padding: 1rem;
   animation: moveTable 2s backwards;
 }
 
 .table thead tr th {
-  padding: 1rem;
+  padding: 0.5rem;
   font-size: 1.2rem;
   letter-spacing: 0.2rem;
 }
@@ -129,3 +128,4 @@ body::after {
   font-weight: 500;
   font-size: 1rem;
 }
+
