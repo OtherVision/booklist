@@ -27,4 +27,4 @@ A ideia inicial é ter uma página para registro de livros lidos durante o ano.<
 ##<strong>Sujestão de alteração </strong> :recycle:<br>
 Caso alguém deseje sujerir alguma alteração ou adição de funcionalidade:<br>
 :point_right: git clone https://github.com/OtherVision/booklist.git (clonar o repositorio);<br>
-:point_right: Editar as mudanças e enviar Pull requests para aprovação;<br>
+:point_right: Editar as mudanças e enviar para aprovação;<br>
